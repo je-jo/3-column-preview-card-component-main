@@ -20,43 +20,47 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   background-color: var(--clr-light-gray);
+  align-items: center;
 }
 
 main {
-    place-self: center;
-    width: clamp(256px, 80%, 920px);
+    /* width: clamp(256px, 80%, 920px); */
     margin: 0 auto;
     padding: 5em 0;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;  
+    outline: 0.5rem solid var(--clr-light-gray);
+    border-radius: 0.5rem;  
 }
 
-.box {
+.column {
     display: grid;
     gap: 2.5em;
     padding: 2.5em;
+    width: min(320px, 100%);
 }
 
-.box--one  { 
+.column:nth-child(1) {
     background-color: var(--clr-orange);
 }
 
-.box--two  { 
+.column:nth-child(2) {
     background-color: var(--clr-cyan);
 }
 
-.box--three  { 
+.column:nth-child(3) {
     background-color: var(--clr-dark-cyan);
 }
 
-h1 {
+h2 {
     font-family: 'Big Shoulders Display', cursive;
     font-size: var(--fs-l);
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--clr-light-gray);
 }
 
 p {
@@ -76,7 +80,7 @@ a:hover {
 
 .btn {
     font-size: var(--fs-m);
-    max-width: 12em;
+    font-weight: bold;
     padding: 1em 0em;
     text-align: center;
     background-color: var(--clr-light-gray);
@@ -84,38 +88,28 @@ a:hover {
     border: 1px solid currentColor;
 }
 
-.box--one .btn {
+.column:nth-child(1) .btn {
     color: var(--clr-orange);
 }
 
-.box--two .btn {
+.column:nth-child(2) .btn {
     color: var(--clr-cyan);
 }
 
-.box--three .btn {
+.column:nth-child(3) .btn {
     color: var(--clr-dark-cyan);
 }
 
 .btn:hover {
-    color: var(--clr-light-gray);
-}
-
-.box--one .btn:hover  { 
-    background-color: var(--clr-orange);
-}
-
-.box--two .btn:hover  { 
-    background-color: var(--clr-cyan);
-}
-
-.box--three .btn:hover  { 
-    background-color: var(--clr-dark-cyan);
-}
+    color: var(--clr-light-gray) !important;
+    background-color: transparent;
+} 
 
 footer {
     text-align: center;
     font-size: var(--fs-s);
     color: var(--clr-dark-cyan);
+    padding: 1em 0;
 }
 
 @media screen and (min-width: 768px) {
