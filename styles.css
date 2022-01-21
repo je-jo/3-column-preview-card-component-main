@@ -8,11 +8,11 @@
     --clr-light-gray: hsl(0, 0%, 95%);
     font-family: 'Lexend Deca', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 15px;
     color: var(--clr-white);
-    --fs-s: 0.625rem;
-    --fs-m: 0.75rem;
-    --fs-l: 2rem;
+    --fs-s: 0.9rem;
+    --fs-m: 1rem;
+    --fs-l: 2.3rem;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 main {
-    /* width: clamp(256px, 80%, 920px); */
+    width: clamp(256px, 90%, 360px);
     margin: 0 auto;
     padding: 5em 0;
 }
@@ -32,6 +32,7 @@ main {
 .container {
     display: grid;
     grid-template-columns: 1fr;  
+    justify-items: center;
     outline: 0.5rem solid var(--clr-light-gray);
     border-radius: 0.5rem;  
 }
@@ -40,7 +41,7 @@ main {
     display: grid;
     gap: 2.5em;
     padding: 2.5em;
-    width: min(320px, 100%);
+    width: 100%;
 }
 
 .column:nth-child(1) {
@@ -65,7 +66,7 @@ h2 {
 
 p {
     font-size: var(--fs-s);
-    max-width: 25ch;
+    max-width: 23ch;
     line-height: 2;
 }
 
@@ -79,10 +80,10 @@ a:hover {
 }
 
 .btn {
+    display: block;
+    place-self: start;
     font-size: var(--fs-m);
-    font-weight: bold;
-    padding: 1em 0em;
-    text-align: center;
+    padding: 1em 2em;
     background-color: var(--clr-light-gray);
     border-radius: 2em;
     border: 1px solid currentColor;
@@ -114,11 +115,11 @@ footer {
 
 @media screen and (min-width: 768px) {
 
-    :root {
-        font-size: 1.2rem;
-    }
-
     .container {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        width: min(90%, 920px);
     }
 }
