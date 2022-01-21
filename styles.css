@@ -18,9 +18,21 @@
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   background-color: var(--clr-light-gray);
   align-items: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 main {
@@ -79,6 +91,11 @@ a:hover {
     color: var(--clr-cyan);
 }
 
+:focus-visible {
+    outline: 3px dotted currentColor;
+    outline-offset: 0.4em;
+}
+
 .btn {
     display: block;
     place-self: start;
@@ -87,6 +104,8 @@ a:hover {
     background-color: var(--clr-light-gray);
     border-radius: 2em;
     border: 1px solid currentColor;
+    cursor: pointer; 
+    transition: ease .3s
 }
 
 .column:nth-child(1) .btn {
@@ -105,6 +124,10 @@ a:hover {
     color: var(--clr-light-gray) !important;
     background-color: transparent;
 } 
+
+.btn:focus-visible {
+    outline-color: var(--clr-light-gray);
+}
 
 footer {
     text-align: center;
